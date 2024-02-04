@@ -54,7 +54,7 @@ class SignInForm extends StatelessWidget {
                     paddingHorizontal * .47395833,
                     paddingVertical * .05868263))),
             child: Text(
-              'SignIn',
+              'Entrar',
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ),

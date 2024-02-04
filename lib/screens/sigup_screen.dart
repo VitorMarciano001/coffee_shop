@@ -10,7 +10,6 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController controller = TextEditingController();
     final paddingHorizontal = MediaQuery.of(context).size.width;
     final paddingVertical =
         MediaQuery.of(context).size.height + AppBar().preferredSize.height;
@@ -50,17 +49,20 @@ class SignUpPage extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.titleMedium),
                   ),
-                  SizedBox(height: paddingVertical * .016766467),
+                  SizedBox(height: paddingVertical * .03038922),
                   Padding(
                     padding: EdgeInsets.symmetric(
-                        horizontal: paddingHorizontal * .036458333),
+                      horizontal: paddingHorizontal * .036458333,
+                    ),
                     child: const SignUpForm(),
                   ),
                   SizedBox(
                     height: paddingVertical * .016766467,
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
                     child: Text('Ja possui uma conta?',
                         style: Theme.of(context).textTheme.bodyLarge),
                   ),

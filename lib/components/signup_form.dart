@@ -69,7 +69,7 @@ class _SignUpFormState extends State<SignUpForm> {
               ),
             ),
             child: Text(
-              'SignUp',
+              'Cadastrar',
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ),
