@@ -1,5 +1,7 @@
 // ignore_for_file: unused_local_variable
 
+import 'package:coffee_shop/utils/screen_size_manager.dart';
+
 import '../components/signup_form.dart';
 import '../components/signin_signup_option_buttons.dart';
 import '../theme/colors.dart';
@@ -10,15 +12,17 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final paddingHorizontal = MediaQuery.of(context).size.width;
-    final paddingVertical =
-        MediaQuery.of(context).size.height + AppBar().preferredSize.height;
+    final Size screenDimentions = MediaQuery.of(context).size;
+    final screenCalculator = ScreenSizeManager(
+      sizeWidth: screenDimentions.width,
+      sizeHeight: screenDimentions.height,
+    );
     return Material(
       child: Stack(
         children: [
           SizedBox(
             width: double.maxFinite,
-            height: paddingVertical * .31437126,
+            height: screenCalculator.calculateDistance(.31437126, 'height'),
             child: Image.asset('assets/images/coffee_signup.png',
                 fit: BoxFit.fill),
           ),
@@ -26,7 +30,7 @@ class SignUpPage extends StatelessWidget {
             bottom: 0,
             left: 0,
             right: 0,
-            height: paddingVertical * .68113772,
+            height: screenCalculator.calculateDistance(.68113772, 'height'),
             child: Container(
               width: double.maxFinite,
               decoration: BoxDecoration(
@@ -39,25 +43,33 @@ class SignUpPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(height: paddingVertical * .016766467),
                   SizedBox(
-                    height: paddingVertical * .060778443,
-                    width: paddingHorizontal * .461805556,
+                      height: screenCalculator.calculateDistance(
+                          .016766467, 'height')),
+                  SizedBox(
+                    height:
+                        screenCalculator.calculateDistance(.060778443, 'heght'),
+                    width:
+                        screenCalculator.calculateDistance(.461805556, 'heght'),
                     child: Text(
                         'Insira seu e-mail e senha '
                         'para se registrar no nosso App.',
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.titleMedium),
                   ),
-                  SizedBox(height: paddingVertical * .03038922),
+                  SizedBox(
+                      height: screenCalculator.calculateDistance(
+                          .03038922, 'heght')),
                   Padding(
                     padding: EdgeInsets.symmetric(
-                      horizontal: paddingHorizontal * .036458333,
+                      horizontal: screenCalculator.calculateDistance(
+                          .036458333, 'heght'),
                     ),
                     child: const SignUpForm(),
                   ),
                   SizedBox(
-                    height: paddingVertical * .016766467,
+                    height:
+                        screenCalculator.calculateDistance(.016766467, 'heght'),
                   ),
                   TextButton(
                     onPressed: () {
@@ -67,7 +79,8 @@ class SignUpPage extends StatelessWidget {
                         style: Theme.of(context).textTheme.bodyLarge),
                   ),
                   SizedBox(
-                    height: paddingVertical * .03038922,
+                    height:
+                        screenCalculator.calculateDistance(.03038922, 'heght'),
                   ),
                   const SignInSignUpOptionButtons()
                 ],

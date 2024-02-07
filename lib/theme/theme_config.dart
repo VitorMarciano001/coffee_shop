@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 ThemeData themeData = ThemeData(
   useMaterial3: false,
   scaffoldBackgroundColor: background.shade800,
-  fontFamily: 'Bad Script',
+  fontFamily: 'Alegreya',
   textTheme: textTheme,
   colorScheme: ColorScheme.fromSwatch().copyWith(
     primary: primary.shade500,
