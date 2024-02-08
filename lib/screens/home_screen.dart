@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
             onPressed: () => Navigator.of(context).pop(),
-            icon: Icon(Icons.arrow_back)),
+            icon: const Icon(Icons.arrow_back)),
       ),
       body: Center(
         child: Text(

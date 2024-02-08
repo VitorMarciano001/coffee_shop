@@ -45,7 +45,7 @@ class SignInForm extends StatelessWidget {
           ElevatedButton(
             onPressed: () => Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (ctx) => SignUpPage(),
+                builder: (ctx) => const SignUpPage(),
               ),
             ),
             style: ButtonStyle(
