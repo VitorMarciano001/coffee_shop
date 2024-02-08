@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../screens/verify_page.dart';
-import 'signin_signup_form_field.dart';
+import 'auth_form_field.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({
@@ -46,7 +46,6 @@ class _SignUpFormState extends State<SignUpForm> {
           SizedBox(height: paddingVertical * .016766467),
           AuthFormField(
             label: "Insira sua Senha",
-            controller: password,
             validatorFunction: (string) => string,
             obscure: false,
           ),
