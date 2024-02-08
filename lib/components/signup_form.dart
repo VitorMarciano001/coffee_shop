@@ -45,6 +45,7 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           SizedBox(height: paddingVertical * .016766467),
           AuthFormField(
+            controller: password,
             label: "Insira sua Senha",
             validatorFunction: (string) => string,
             obscure: false,
