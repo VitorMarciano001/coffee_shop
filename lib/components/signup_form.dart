@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../screens/verify_page.dart';
 import 'auth_form_field.dart';
 
 class SignUpForm extends StatefulWidget {

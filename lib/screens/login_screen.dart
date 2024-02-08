@@ -1,7 +1,6 @@
-import 'package:coffee_shop/models/app_route.dart';
-import 'package:coffee_shop/screens/sigup_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../models/app_route.dart';
 import '../components/signin_signup_option_buttons.dart';
 import '../components/signup_form.dart';
 

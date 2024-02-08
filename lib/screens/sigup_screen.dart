@@ -1,13 +1,10 @@
-// ignore_for_file: unused_local_variable
+import 'package:flutter/material.dart';
 
-import 'package:coffee_shop/models/app_route.dart';
-import 'package:coffee_shop/screens/verify_page.dart';
-import 'package:coffee_shop/utils/screen_size_manager.dart';
-
+import '../models/app_route.dart';
+import '../utils/screen_size_manager.dart';
 import '../components/signup_form.dart';
 import '../components/signin_signup_option_buttons.dart';
 import '../theme/colors.dart';
-import 'package:flutter/material.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
