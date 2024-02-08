@@ -1,35 +1,18 @@
-import 'package:coffee_shop/components/signin_signup_option_buttons.dart';
+import 'package:coffee_shop/models/app_route.dart';
+import 'package:coffee_shop/screens/sigup_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../components/signin_form.dart';
+import '../components/signin_signup_option_buttons.dart';
+import '../components/signup_form.dart';
 
-class LogInPage extends StatefulWidget {
+class LogInPage extends StatelessWidget {
   const LogInPage({super.key});
 
   @override
-  State<LogInPage> createState() => _LogInPageState();
-}
-
-class _LogInPageState extends State<LogInPage> {
-  late TextEditingController _email;
-  late TextEditingController _password;
-  late GlobalKey<FormState> _formKey;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _email = TextEditingController();
-    _password = TextEditingController();
-    _formKey = GlobalKey<FormState>();
-  }
-
-  late final paddingHorizontal = MediaQuery.of(context).size.width;
-  late final paddingVertical =
-      MediaQuery.of(context).size.height + AppBar().preferredSize.height;
-
-  @override
   Widget build(BuildContext context) {
+    late final paddingHorizontal = MediaQuery.of(context).size.width;
+    late final paddingVertical =
+        MediaQuery.of(context).size.height + AppBar().preferredSize.height;
     return Scaffold(
         body: Column(
       children: [
@@ -57,10 +40,10 @@ class _LogInPageState extends State<LogInPage> {
           padding: EdgeInsets.symmetric(
             horizontal: paddingHorizontal * 0.03645833,
           ),
-          child: SignInForm(
-            formKey: _formKey,
-            email: _email,
-            password: _password,
+          child: SignUpForm(
+            showOrNot: false,
+            fn: () =>
+                Navigator.of(context).pushReplacementNamed(AppRoute.signin),
           ),
         ),
         SizedBox(
@@ -81,13 +64,5 @@ class _LogInPageState extends State<LogInPage> {
         const SignInSignUpOptionButtons()
       ],
     ));
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    _email;
-    _password;
-    _formKey;
   }
 }

@@ -1,5 +1,7 @@
 // ignore_for_file: unused_local_variable
 
+import 'package:coffee_shop/models/app_route.dart';
+import 'package:coffee_shop/screens/verify_page.dart';
 import 'package:coffee_shop/utils/screen_size_manager.dart';
 
 import '../components/signup_form.dart';
@@ -65,7 +67,11 @@ class SignUpPage extends StatelessWidget {
                       horizontal: screenCalculator.calculateDistance(
                           .036458333, 'heght'),
                     ),
-                    child: const SignUpForm(),
+                    child: SignUpForm(
+                      showOrNot: true,
+                      fn: () => Navigator.of(context)
+                          .pushReplacementNamed(AppRoute.verify),
+                    ),
                   ),
                   SizedBox(
                     height:

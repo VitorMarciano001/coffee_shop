@@ -6,7 +6,12 @@ import 'signin_signup_form_field.dart';
 class SignUpForm extends StatefulWidget {
   const SignUpForm({
     super.key,
+    required this.showOrNot,
+    required this.fn,
   });
+
+  final bool showOrNot;
+  final Function() fn;
 
   @override
   State<SignUpForm> createState() => _SignUpFormState();
@@ -32,33 +37,30 @@ class _SignUpFormState extends State<SignUpForm> {
     return Form(
       child: Column(
         children: [
-          SignInSignUpFormField(
+          AuthFormField(
             label: "E-mail ou Telefone",
             controller: email,
             validatorFunction: (string) => string,
             obscure: false,
           ),
           SizedBox(height: paddingVertical * .016766467),
-          SignInSignUpFormField(
+          AuthFormField(
             label: "Insira sua Senha",
             controller: password,
             validatorFunction: (string) => string,
             obscure: false,
           ),
           SizedBox(height: paddingVertical * .016766467),
-          SignInSignUpFormField(
-            label: "Confirme sua Senha",
-            controller: confirmPassword,
-            validatorFunction: (string) => string,
-            obscure: false,
-          ),
+          if (widget.showOrNot)
+            AuthFormField(
+              label: "Confirme sua Senha",
+              controller: confirmPassword,
+              validatorFunction: (string) => string,
+              obscure: false,
+            ),
           SizedBox(height: paddingVertical * .039820359),
           ElevatedButton(
-            onPressed: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (ctx) => const VerifyPage(),
-              ),
-            ),
+            onPressed: widget.fn,
             style: ButtonStyle(
               elevation: const MaterialStatePropertyAll(6),
               minimumSize: MaterialStatePropertyAll(
