@@ -1,4 +1,4 @@
-import 'package:coffee_shop/screens/home_screen.dart';
+import 'package:coffee_shop/utils/app_route.dart';
 import 'package:flutter/material.dart';
 
 import '../theme/colors.dart';
@@ -79,11 +79,8 @@ class VerifyPage extends StatelessWidget {
             ),
             SizedBox(height: paddingVertical * .055538922),
             ElevatedButton(
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (ctx) => const HomePage(),
-                ),
-              ),
+              onPressed: () =>
+                  Navigator.of(context).popAndPushNamed(AppRoute.home),
               style: ButtonStyle(
                 elevation: const MaterialStatePropertyAll(6),
                 minimumSize: MaterialStatePropertyAll(
