@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../screens/login_screen.dart';
 import '../screens/verify_page.dart';
 import './theme/theme_config.dart';
-import 'models/app_route.dart';
+import 'utils/app_route.dart';
 import 'screens/sigup_screen.dart';
 
 void main() {

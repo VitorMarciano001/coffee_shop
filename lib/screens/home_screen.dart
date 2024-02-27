@@ -6,11 +6,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-            onPressed: () => Navigator.of(context).pop(),
-            icon: const Icon(Icons.arrow_back)),
-      ),
+      appBar: AppBar(),
       body: Center(
         child: Text(
           'Home Page',

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/app_route.dart';
+import '../utils/app_route.dart';
 import '../utils/screen_size_manager.dart';
 import '../components/signup_form.dart';
 import '../components/signin_signup_option_buttons.dart';
